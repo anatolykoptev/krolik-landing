@@ -80,6 +80,80 @@
     }
     </script>
 
+    <!-- FAQ Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Krolik Felix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Krolik Felix is an open-source TypeScript CLI tool that automatically routes AI tasks to optimal model tiers (Free, Cheap, Mid, Premium) based on complexity. It reduces AI API costs by 90% through intelligent multi-tier routing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does multi-tier routing work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Felix analyzes each task's complexity and automatically selects the most cost-effective AI model. Simple tasks (formatting, refactoring) use free models, medium tasks (features, debugging) use cheap models, and complex tasks (architecture, algorithms) use premium models. If a cheaper model fails, it cascades to the next tier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Krolik Felix cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Krolik Felix is completely free and open source under the FSL-1.1 license (converts to Apache 2.0 on December 26, 2027). You only pay for the AI model APIs you consume, which are automatically optimized to reduce costs by 90%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI models are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Felix supports major AI providers including OpenAI (GPT-4, GPT-3.5), Anthropic (Claude Opus, Sonnet, Haiku), Google (Gemini Pro, Flash), and open-source models (Llama, DeepSeek). It automatically manages API keys and routing across all providers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to change my code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No code changes required. Krolik Felix works as a CLI tool or MCP server. Simply install via npm (npm i -g @anatolykoptev/krolik-cli), create a PRD.json with your tasks, and run 'krolik felix start'. It handles all routing automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe for production use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Krolik Felix is production-ready with cascade fallback for reliability. If a cheaper model fails, it automatically escalates to the next tier. It includes SQLite-based history learning to improve routing accuracy over time and maintains full TypeScript type safety."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I track my savings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use 'krolik felix stats' to view detailed routing statistics including per-tier usage, success rates, and cost breakdowns. Use 'krolik felix estimate --prd PRD.json' to get cost projections (optimistic, expected, pessimistic) before execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it with Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Krolik Felix includes native Model Context Protocol (MCP) integration. Install as MCP server: 'claude mcp add krolik -- npx @anatolykoptev/krolik-cli mcp'. This provides context-aware tools directly in Claude Code."
+          }
+        }
+      ]
+    }
+    </script>
+
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
@@ -647,6 +721,189 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to know about Krolik Felix
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">What is Krolik Felix?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed">
+                            Krolik Felix is an open-source TypeScript CLI tool that automatically routes AI tasks to optimal model tiers (Free, Cheap, Mid, Premium) based on complexity. It reduces AI API costs by 90% through intelligent multi-tier routing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">How does multi-tier routing work?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Felix analyzes each task's complexity and automatically selects the most cost-effective AI model:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li><strong>Free tier</strong> (60% of tasks): formatting, refactoring, simple fixes</li>
+                            <li><strong>Cheap tier</strong> (25% of tasks): features, debugging, testing</li>
+                            <li><strong>Mid/Premium tiers</strong> (15% of tasks): architecture, complex algorithms</li>
+                        </ul>
+                        <p class="text-gray-600 leading-relaxed mt-3">
+                            If a cheaper model fails, it automatically cascades to the next tier for reliability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">How much does Krolik Felix cost?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong class="text-green-600">Krolik Felix is completely free</strong> and open source under the FSL-1.1 license (converts to Apache 2.0 on December 26, 2027). You only pay for the AI model APIs you consume, which are automatically optimized to reduce costs by 90%.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">Which AI models are supported?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Felix supports all major AI providers:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li><strong>OpenAI</strong>: GPT-4, GPT-4 Turbo, GPT-3.5 Turbo</li>
+                            <li><strong>Anthropic</strong>: Claude Opus, Sonnet, Haiku</li>
+                            <li><strong>Google</strong>: Gemini Pro, Gemini Flash</li>
+                            <li><strong>Open Source</strong>: Llama, DeepSeek, and more</li>
+                        </ul>
+                        <p class="text-gray-600 leading-relaxed mt-3">
+                            Felix automatically manages API keys and routing across all providers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">Do I need to change my code?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            <strong>No code changes required.</strong> Krolik Felix works as a CLI tool or MCP server:
+                        </p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm">
+                            <span class="text-green-400"># Install globally</span><br>
+                            <span class="text-blue-400">npm</span> i -g @anatolykoptev/krolik-cli<br><br>
+                            <span class="text-green-400"># Create PRD and run</span><br>
+                            <span class="text-blue-400">krolik</span> felix start --prd PRD.json
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">Is it safe for production use?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong class="text-green-600">Yes, production-ready.</strong> Felix includes cascade fallback for reliability—if a cheaper model fails, it automatically escalates to the next tier. It uses SQLite-based history learning to improve routing accuracy over time and maintains full TypeScript type safety.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">How do I track my savings?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Felix provides comprehensive cost tracking:
+                        </p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm mb-3">
+                            <span class="text-green-400"># View routing statistics</span><br>
+                            <span class="text-blue-400">krolik</span> felix stats<br><br>
+                            <span class="text-green-400"># Estimate costs before execution</span><br>
+                            <span class="text-blue-400">krolik</span> felix estimate --prd PRD.json
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Get detailed breakdowns including per-tier usage, success rates, and projected costs (optimistic, expected, pessimistic).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-gray-900">Can I use it with Claude Code?</span>
+                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5">
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            <strong class="text-green-600">Yes!</strong> Krolik Felix includes native Model Context Protocol (MCP) integration:
+                        </p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm">
+                            <span class="text-blue-400">claude</span> mcp add krolik -- npx @anatolykoptev/krolik-cli mcp
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mt-3">
+                            This provides context-aware tools directly in Claude Code, including project context, memory management, and cost optimization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still have questions? -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Still have questions?</p>
+                <a href="https://github.com/anatolykoptev/krolik-cli/discussions" target="_blank" class="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-semibold">
+                    <span>Ask on GitHub Discussions</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-600 to-blue-600 text-white">
         <div class="max-w-4xl mx-auto text-center">
@@ -673,7 +930,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-2">
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="./images/Minimalist_logo_cute_smiling_1_2026-01-18T09-17-33.png" alt="Krolik Felix" class="h-10 w-10 rounded-lg">
+                        <img src="./images/logo.webp" alt="Krolik Felix" class="h-10 w-10 rounded-lg">
                         <span class="text-xl font-bold text-white">Krolik Felix</span>
                     </div>
                     <p class="text-gray-400 mb-4">
@@ -815,6 +1072,37 @@
             if (!link.hasAttribute('rel')) {
                 link.setAttribute('rel', 'noopener noreferrer');
             }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question').forEach(otherButton => {
+                    if (otherButton !== this) {
+                        const otherAnswer = otherButton.nextElementSibling;
+                        const otherIcon = otherButton.querySelector('.faq-icon');
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.classList.remove('rotate-180');
+                        otherButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current FAQ
+                if (isExpanded) {
+                    answer.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    answer.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
         });
     </script>
 </body>
