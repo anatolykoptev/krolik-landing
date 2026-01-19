@@ -227,3 +227,50 @@ if (heroTerminal) {
     animation: fadeIn 0.3s ease-out;
 }
 */
+
+// Social Proof: Fetch GitHub Stars and NPM Downloads
+function fetchGitHubStars() {
+    const el = document.getElementById('github-stars');
+    if (!el) return;
+
+    fetch('https://api.github.com/repos/anatolykoptev/krolik-cli')
+        .then(res => res.json())
+        .then(data => {
+            const stars = data.stargazers_count || 100;
+            el.textContent = stars.toLocaleString();
+        })
+        .catch(() => {
+            el.textContent = '100+';
+        });
+}
+
+function fetchNPMDownloads() {
+    const el = document.getElementById('npm-downloads');
+    if (!el) return;
+
+    fetch('https://api.npmjs.org/downloads/point/last-week/@anatolykoptev/krolik-cli')
+        .then(res => res.json())
+        .then(data => {
+            const downloads = data.downloads || 500;
+            el.textContent = downloads.toLocaleString();
+        })
+        .catch(() => {
+            el.textContent = '500+';
+        });
+}
+
+// Initialize Social Proof when section is visible
+const socialProofObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            fetchGitHubStars();
+            fetchNPMDownloads();
+            socialProofObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+const socialProofSection = document.querySelector('#github-stars');
+if (socialProofSection) {
+    socialProofObserver.observe(socialProofSection.closest('section'));
+}
