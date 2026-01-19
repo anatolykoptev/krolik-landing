@@ -311,6 +311,25 @@
         </div>
     </section>
 
+    <!-- Supported Providers -->
+    <section class="py-12 border-b border-white/5 bg-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-zinc-500 text-sm font-mono mb-8 uppercase tracking-widest">Supported Providers</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
+                <!-- Text-based logos for industrial feel -->
+                <span class="text-xl font-bold text-white font-sans tracking-tight">OpenAI</span>
+                <span class="text-xl font-bold text-white font-serif">Anthropic</span>
+                <span class="text-xl font-bold text-white font-sans flex items-center gap-1">Google <span class="text-zinc-400 font-normal">Gemini</span></span>
+                <span class="text-xl font-bold text-white font-mono">Groq</span>
+                <span class="text-xl font-bold text-white font-mono flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    <span>Ollama</span>
+                </span>
+                <span class="text-xl font-bold text-white font-sans tracking-wider">DeepSeek</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Bento Grid -->
     <section id="features-bento-grid" class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-white/5">
         <div class="max-w-7xl mx-auto">
@@ -356,29 +375,22 @@
                     </div>
                 </div>
 
-                <!-- Item 2: Cost Savings (1x1) -->
+                <!-- Item 2: Universal API (1x1) -->
                 <div class="md:col-span-1 md:row-span-1 spotlight-group spotlight-card rounded-xl p-8 relative overflow-hidden group min-h-[280px] flex flex-col justify-between">
-                     <div class="absolute top-0 right-0 p-32 bg-gradient-to-br from-emerald-500/5 to-transparent pointer-events-none rounded-bl-full"></div>
                      <div>
                          <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-blue-500/50 transition">
-                             <img src="./images/Modern_minimalist_icon_dollar_1_2026-01-18T09-17-21.png" alt="Cost Savings" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
+                             <img src="./images/Modern_minimalist_icon_api_1_2026-01-18T09-17-21.png" alt="Universal API" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
                          </div>
-                         <h3 class="text-xl font-bold text-white mb-2">90% Cost Reduction</h3>
+                         <h3 class="text-xl font-bold text-white mb-2">Universal API</h3>
                      </div>
-                      <div class="mt-4 space-y-2">
-                          <div class="flex items-center gap-2 text-xs font-mono text-red-400/60 line-through">
-                              <div class="w-16">Before</div>
-                              <div class="h-2 w-full bg-red-900/30 rounded overflow-hidden">
-                                  <div class="h-full bg-red-500/50 w-full"></div>
-                              </div>
-                              <div>$$$</div>
-                          </div>
-                          <div class="flex items-center gap-2 text-xs font-mono text-emerald-500">
-                              <div class="w-16">After</div>
-                              <div class="h-2 w-full bg-emerald-900/30 rounded overflow-hidden">
-                                  <div class="h-full bg-emerald-500 w-[10%]"></div>
-                              </div>
-                              <div>$</div>
+                      <div class="mt-4">
+                          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+                              One standard interface for OpenAI, Anthropic, and Google. Zero vendor lock-in.
+                          </p>
+                          <div class="flex gap-2">
+                              <span class="text-[10px] font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">OpenAI</span>
+                              <span class="text-[10px] font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">Anthropic</span>
+                              <span class="text-[10px] font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">Google</span>
                           </div>
                       </div>
                 </div>
@@ -455,9 +467,9 @@
                             <span class="bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 group-hover:from-emerald-400 group-hover:to-emerald-600">3</span>
                              <div class="absolute inset-0 rounded-2xl bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Save Money</h3>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Visual Analytics</h3>
                         <p class="text-zinc-400 text-sm max-w-xs mx-auto">
-                            Krolik Felix automatically routes tasks to optimal models. Watch costs drop 90%.
+                            Track usage per provider, monitor latency, and audit routing decisions in real-time.
                         </p>
                     </div>
                 </div>
