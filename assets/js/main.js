@@ -5,6 +5,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
 function openMobileMenu() {
+    if (!mobileMenu || !mobileMenuOverlay || !mobileMenuBtn) return;
     mobileMenu.classList.add('active');
     mobileMenuOverlay.classList.remove('hidden');
     mobileMenuBtn.setAttribute('aria-expanded', 'true');
@@ -12,6 +13,7 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
+    if (!mobileMenu || !mobileMenuOverlay || !mobileMenuBtn) return;
     mobileMenu.classList.remove('active');
     mobileMenuOverlay.classList.add('hidden');
     mobileMenuBtn.setAttribute('aria-expanded', 'false');
@@ -23,13 +25,16 @@ if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
 if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
 
 // Close menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-});
+const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+if (mobileMenuLinks.length > 0) {
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
 
 // Close mobile menu on escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
         closeMobileMenu();
     }
 });
@@ -38,17 +43,30 @@ document.addEventListener('keydown', (e) => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        if (href === '#' || href === '#main') return;
+        if (href === '#' || href === '#main') {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
 
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
             const offset = 80; // Nav height
             const targetPosition = target.offsetTop - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+
+            // Try smooth scroll, fallback to instant for old browsers
+            try {
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } catch (error) {
+                window.scrollTo(0, targetPosition);
+            }
         }
     });
 });
