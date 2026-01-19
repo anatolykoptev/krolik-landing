@@ -18,13 +18,20 @@ function closeMobileMenu() {
     document.body.style.overflow = '';
 }
 
-mobileMenuBtn.addEventListener('click', openMobileMenu);
-mobileMenuClose.addEventListener('click', closeMobileMenu);
-mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
 
 // Close menu when clicking on a link
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
+});
+
+// Close mobile menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+    }
 });
 
 // Smooth Scroll with Offset for Sticky Nav
@@ -51,16 +58,16 @@ function updateScrollProgress() {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
-    document.getElementById('scroll-progress').style.width = scrolled + '%';
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) progressBar.style.width = scrolled + '%';
 }
-
 window.addEventListener('scroll', updateScrollProgress);
 
 // Animated Counter
 function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-target'));
     const suffix = element.getAttribute('data-suffix') || '';
-    const duration = 1500; // 1.5 seconds
+    const duration = 1500;
     const steps = 50;
     const increment = target / steps;
     let current = 0;
@@ -76,33 +83,18 @@ function animateCounter(element) {
     }, duration / steps);
 }
 
-// Intersection Observer for Counter Animation
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting && entry.target.textContent === '0' || entry.target.textContent === '0%') {
+        // Check if content is 0 or 0% to avoid re-animating
+        if (entry.isIntersecting && (entry.target.textContent === '0' || entry.target.textContent === '0%')) {
             animateCounter(entry.target);
             counterObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
 
-// Observe all stat counters
 document.querySelectorAll('.stat-counter').forEach(counter => {
     counterObserver.observe(counter);
-});
-
-// Close mobile menu on escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-        closeMobileMenu();
-    }
-});
-
-// Add rel="noopener noreferrer" to external links for security
-document.querySelectorAll('a[target="_blank"]').forEach(link => {
-    if (!link.hasAttribute('rel')) {
-        link.setAttribute('rel', 'noopener noreferrer');
-    }
 });
 
 // FAQ Accordion
@@ -117,9 +109,11 @@ document.querySelectorAll('.faq-question').forEach(button => {
             if (otherButton !== this) {
                 const otherAnswer = otherButton.nextElementSibling;
                 const otherIcon = otherButton.querySelector('.faq-icon');
-                otherAnswer.classList.add('hidden');
-                otherIcon.classList.remove('rotate-180');
-                otherButton.setAttribute('aria-expanded', 'false');
+                if (otherAnswer && otherIcon) {
+                    otherAnswer.classList.add('hidden');
+                    otherIcon.classList.remove('rotate-180');
+                    otherButton.setAttribute('aria-expanded', 'false');
+                }
             }
         });
 
@@ -135,3 +129,101 @@ document.querySelectorAll('.faq-question').forEach(button => {
         }
     });
 });
+
+// Spotlight Hover Effect
+document.addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
+
+// Terminal Typing Effect
+function initTerminalEffect() {
+    const terminal = document.getElementById('hero-terminal');
+    if (!terminal) return;
+
+    const inputSpan = terminal.querySelector('.cmd-input');
+    if (!inputSpan) return;
+
+    const commandText = "krolik felix start --prd PRD.json";
+    inputSpan.textContent = "";
+
+    // Output content to show after typing
+    const outputLines = [
+        '<span class="text-zinc-500">→ Loading PRD context from ./PRD.json...</span>',
+        '<span class="text-emerald-400">✔ PRD Parsed</span> <span class="text-zinc-500">(3 tasks found)</span>',
+        '<br><span class="text-zinc-400 font-bold">Task 1: [Refactor Auth Logic]</span>',
+        '  <span class="text-zinc-500">Complexity:</span> <span class="text-yellow-400">Medium</span>',
+        '  <span class="text-zinc-500">Routing to:</span> <span class="text-emerald-400 font-bold">Claude Haiku</span> <span class="text-zinc-600">(Cheap Tier)</span>',
+        '',
+        '<span class="text-zinc-400 font-bold">Task 2: [Database Schema Migration]</span>',
+        '  <span class="text-zinc-500">Complexity:</span> <span class="text-red-400">High</span>',
+        '  <span class="text-zinc-500">Routing to:</span> <span class="text-purple-400 font-bold">Claude Opus</span> <span class="text-zinc-600">(Premium Tier)</span>',
+        '',
+        '<span class="text-emerald-500 font-bold">✔ Optimization Complete.</span> <span class="text-zinc-400">Estimated cost: $0.04 (Saved $0.56)</span>'
+    ];
+
+    let charIndex = 0;
+
+    // Typing animation
+    function typeCommand() {
+        if (charIndex < commandText.length) {
+            inputSpan.textContent += commandText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeCommand, 50 + Math.random() * 50); // Random typing speed
+        } else {
+            // After typing, wait a bit then show output
+            setTimeout(showOutput, 500);
+        }
+    }
+
+    let lineIndex = 0;
+    function showOutput() {
+        if (lineIndex < outputLines.length) {
+            const line = document.createElement('div');
+            line.innerHTML = outputLines[lineIndex];
+            line.classList.add('mt-1', 'opacity-0', 'animate-fade-in');
+            line.style.animationFillMode = 'forwards';
+            terminal.appendChild(line);
+
+            // Auto scroll to bottom
+            terminal.scrollTop = terminal.scrollHeight;
+
+            lineIndex++;
+            setTimeout(showOutput, 200); // Speed of output lines
+        }
+    }
+
+    // Start typing after a short delay
+    setTimeout(typeCommand, 1000);
+}
+
+// Initialize terminal when in view
+const terminalObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            initTerminalEffect();
+            terminalObserver.unobserve(entry.target);
+        }
+    });
+});
+
+const heroTerminal = document.getElementById('hero-terminal');
+if (heroTerminal) {
+    terminalObserver.observe(heroTerminal);
+}
+
+// Add CSS animation for fade-in manually if not in CSS
+/*
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+*/

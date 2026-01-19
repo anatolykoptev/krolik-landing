@@ -42,7 +42,8 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -156,7 +157,7 @@
 
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-[#09090b] text-zinc-100">
     <!-- Skip Link for Accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -166,26 +167,27 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50" aria-label="Main navigation">
+    <nav class="glass-panel fixed w-full top-0 z-50 border-b border-white/10" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
-                    <img src="./images/logo.webp" alt="Krolik Felix Logo" class="h-10 w-10 rounded-lg">
-                    <span class="text-xl font-bold text-gray-900">Krolik Felix</span>
+                    <img src="./images/logo.webp" alt="Krolik Felix Logo" class="h-8 w-8 rounded-md">
+                    <span class="text-xl font-bold font-mono tracking-tight text-white">krolik<span class="text-emerald-400">.felix</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition">Features</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 transition">How It Works</a>
-                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition">Pricing</a>
-                    <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="btn-gradient bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition">
-                        Get Started
+                    <a href="#features" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">Features</a>
+                    <a href="#how-it-works" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">How It Works</a>
+                    <a href="#pricing" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">Pricing</a>
+                    <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="bg-white/5 border border-white/10 hover:border-emerald-500/50 text-white px-4 py-2 rounded-md font-mono text-xs transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-gray-900 transition p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+                <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white transition p-2" aria-label="Toggle mobile menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -195,25 +197,25 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 hidden" aria-hidden="true"></div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden" aria-hidden="true"></div>
 
     <!-- Mobile Menu Slidein -->
-    <div id="mobile-menu" class="mobile-menu fixed right-0 top-0 h-full w-64 bg-white shadow-xl z-50 overflow-y-auto" role="dialog" aria-label="Mobile menu">
+    <div id="mobile-menu" class="mobile-menu fixed right-0 top-0 h-full w-64 z-50 overflow-y-auto" role="dialog" aria-label="Mobile menu">
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
-                <span class="text-xl font-bold text-gray-900">Menu</span>
-                <button id="mobile-menu-close" class="text-gray-600 hover:text-gray-900" aria-label="Close mobile menu">
+                <span class="text-xl font-bold font-mono text-white">Menu</span>
+                <button id="mobile-menu-close" class="text-zinc-500 hover:text-white" aria-label="Close mobile menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
-            <nav class="flex flex-col space-y-4">
-                <a href="#features" class="text-gray-700 hover:text-green-600 transition py-2 border-b border-gray-100">Features</a>
-                <a href="#how-it-works" class="text-gray-700 hover:text-green-600 transition py-2 border-b border-gray-100">How It Works</a>
-                <a href="#pricing" class="text-gray-700 hover:text-green-600 transition py-2 border-b border-gray-100">Pricing</a>
-                <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="btn-gradient bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">
-                    Get Started
+            <nav class="flex flex-col space-y-4 font-mono">
+                <a href="#features" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">Features</a>
+                <a href="#how-it-works" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">How It Works</a>
+                <a href="#pricing" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">Pricing</a>
+                <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="bg-emerald-600/20 border border-emerald-500/50 text-emerald-400 px-6 py-3 rounded-md font-semibold text-center mt-4 hover:bg-emerald-600/30 transition">
+                    Install Now
                 </a>
             </nav>
         </div>
@@ -221,153 +223,165 @@
 
     <!-- Hero Section -->
     <main id="main">
-    <section class="pt-20 pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                        🚀 Cut AI Costs by 90%
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                        Multi-Tier AI<br/>
-                        <span class="gradient-text">Orchestration</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        Intelligent model routing that automatically selects the optimal AI model for each task.
-                        Stop overpaying for simple tasks, save premium models for when they matter.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition text-center">
-                            Install via npm
-                        </a>
-                        <a href="https://github.com/anatolykoptev/krolik-cli#readme" target="_blank" class="bg-white text-gray-700 border-2 border-gray-300 px-8 py-4 rounded-lg font-semibold text-lg hover:border-gray-400 transition text-center">
-                            View Docs
-                        </a>
-                    </div>
-                    <div class="mt-8 flex items-center space-x-6 text-sm text-gray-500">
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Open Source</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Production Ready</span>
-                        </div>
+    <section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background Grid -->
+        <div class="absolute inset-0 subtle-grid opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 rounded-full text-xs font-mono text-emerald-400 mb-8 animate-fade-in-up">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Saving 90% on AI Costs
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                    Stop overpaying for<br/>
+                    <span class="text-gradient-emerald">AI Inference</span>
+                </h1>
+                
+                <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Intelligent multi-tier routing for LLM tasks. Automatically route simple prompts to cheaper models and complex reasoning to premium ones.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-1 pr-4 flex items-center gap-3 font-mono text-sm text-zinc-400">
+                        <span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded select-none">$</span>
+                        <span class="select-all">npm i -g @anatolykoptev/krolik-cli</span>
+                        <button class="text-zinc-500 hover:text-white transition" aria-label="Copy command">
+                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </button>
                     </div>
                 </div>
-                <div class="relative">
-                    <img src="./images/hero.webp" alt="Krolik Felix Multi-Tier AI Routing" class="rounded-2xl shadow-2xl hero-glow">
+            </div>
+
+            <!-- Terminal Demo -->
+            <div class="max-w-4xl mx-auto terminal-window transform hover:scale-[1.01] transition duration-500">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <div class="ml-4 text-xs text-zinc-500 font-mono flex items-center gap-2">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/></svg>
+                        krolik-cli — node
+                    </div>
+                </div>
+                <div class="terminal-body" id="hero-terminal">
+                    <div class="mb-2">
+                        <span class="cmd-prompt">➜</span>
+                        <span class="cmd-input">krolik felix start --prd PRD.json</span>
+                    </div>
+                    <!-- Typing effect will populate this -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 border-b border-white/5 bg-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="text-5xl font-extrabold gradient-text mb-2">
+            <div class="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-white mb-2 font-mono">
                         <span class="stat-counter" data-target="90" data-suffix="%">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Cost Reduction</div>
+                    <div class="text-zinc-500 text-sm uppercase tracking-wider font-semibold">Cost Reduction</div>
                 </div>
-                <div>
-                    <div class="text-5xl font-extrabold gradient-text mb-2">
-                        <span class="stat-counter" data-target="4" data-suffix="">0</span>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-white mb-2 font-mono">
+                        <span class="stat-counter" data-target="4" data-suffix="">0</span>+
                     </div>
-                    <div class="text-gray-600 font-medium">Model Tiers</div>
+                    <div class="text-zinc-500 text-sm uppercase tracking-wider font-semibold">Auto-Tiers</div>
                 </div>
-                <div>
-                    <div class="text-5xl font-extrabold gradient-text mb-2">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-white mb-2 font-mono">
                         <span class="stat-counter" data-target="100" data-suffix="%">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Automatic</div>
+                    <div class="text-zinc-500 text-sm uppercase tracking-wider font-semibold">TypeScript</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <!-- Features Section - Bento Grid -->
+    <section id="features" class="py-32 px-4 sm:px-6 lg:px-8 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Intelligent Cost Optimization</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Krolik Felix automatically routes tasks to the right AI model tier, saving you money without sacrificing quality.
+            <div class="mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">System Architecture</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl">
+                    Engineered for precision and reliability. Krolik Felix acts as an intelligent middleware between your prompts and LLM providers.
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <img src="./images/icon-tiers.webp" alt="Multi-Tier Routing" class="w-12 h-12 rounded-lg">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+                <!-- Item 1: Large Span -->
+                <div class="md:col-span-2 row-span-1 spotlight-group spotlight-card rounded-xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 border border-emerald-500/20">
+                             <img src="./images/icon-tiers.webp" alt="Tiers" class="w-6 h-6 opacity-80">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Multi-Tier Routing Engine</h3>
+                        <p class="text-zinc-400 leading-relaxed max-w-lg">
+                            Dynamically analyzes prompt complexity. Simple tasks (formatting/fixtures) route to Haiku/3.5-Turbo. Complex reasoning routes to Opus/GPT-4o.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Multi-Tier Routing</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Automatically selects from Free, Cheap, Mid, or Premium tiers based on task complexity. Simple tasks use free models, complex ones get premium attention.
+                    <div class="mt-8 flex gap-2">
+                        <span class="text-xs font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">tier: free</span>
+                        <span class="text-xs font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">tier: cheap</span>
+                        <span class="text-xs font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">tier: premium</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Vertical -->
+                <div class="md:col-span-1 row-span-1 md:row-span-2 spotlight-group spotlight-card rounded-xl p-8 flex flex-col">
+                     <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20">
+                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                     </div>
+                     <h3 class="text-2xl font-bold text-white mb-4">90% Cost Reduction</h3>
+                     <p class="text-zinc-400 leading-relaxed mb-8 flex-grow">
+                         Reserves premium models only for the critical 10% of tasks that actually require them. Drastically cuts monthly API bills.
+                     </p>
+                     
+                     <!-- Mini Chart Visualization -->
+                     <div class="mt-auto space-y-3">
+                         <div class="flex items-center gap-2 text-xs font-mono text-zinc-500">
+                             <div class="w-16">Before</div>
+                             <div class="h-2 w-full bg-red-900/30 rounded overflow-hidden">
+                                 <div class="h-full bg-red-500/50 w-full"></div>
+                             </div>
+                             <div>$$$</div>
+                         </div>
+                         <div class="flex items-center gap-2 text-xs font-mono text-emerald-500">
+                             <div class="w-16">After</div>
+                             <div class="h-2 w-full bg-emerald-900/30 rounded overflow-hidden">
+                                 <div class="h-full bg-emerald-500 w-[10%]"></div>
+                             </div>
+                             <div>$</div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Item 3: Cascade -->
+                <div class="md:col-span-1 row-span-1 spotlight-group spotlight-card rounded-xl p-8">
+                     <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 border border-purple-500/20">
+                         <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cascade Fallback</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Fail-safe reliability. If a cheaper model fails or halts, Felix instantly retries with the next tier up.
                     </p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <img src="./images/icon-cost.webp" alt="Cost Savings" class="w-12 h-12 rounded-lg">
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">90% Cost Savings</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Reduce AI API costs dramatically by using expensive models only when necessary. Free tier handles 60%+ of tasks, premium tier for the critical 10%.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cascade Fallback</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        If a cheaper model fails, automatically escalates to the next tier. Ensures reliability while maintaining cost efficiency through smart retries.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">History Learning</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        SQLite database tracks success/failure patterns. Routes similar tasks to models that performed well historically, improving accuracy over time.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">TypeScript Native</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Built for TypeScript developers with full type safety. Integrates seamlessly with tRPC, Prisma, Next.js and modern TypeScript stacks.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">CLI & MCP</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Use as CLI tool or Model Context Protocol server. Works with Claude Code, integrates into your development workflow seamlessly.
+
+                <!-- Item 4: History -->
+                <div class="md:col-span-1 row-span-1 spotlight-group spotlight-card rounded-xl p-8">
+                     <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20">
+                         <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Heuristic Learning</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        SQLite-backed memory tracks model performance over time to optimize future routing decisions.
                     </p>
                 </div>
             </div>
@@ -375,93 +389,103 @@
     </section>
 
     <!-- How It Works -->
-    <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="how-it-works" class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">How It Works</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Workflow Integrations</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
                     Three simple steps to cut your AI costs by 90%
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-green-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        1
+            
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent -translate-y-1/2 z-0"></div>
+                
+                <div class="grid md:grid-cols-3 gap-12 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center group">
+                        <div class="bg-zinc-900 border border-zinc-700 w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-8 shadow-lg shadow-black/50 group-hover:border-emerald-500/50 group-hover:shadow-emerald-500/20 transition duration-300 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 group-hover:from-emerald-400 group-hover:to-emerald-600">1</span>
+                            <div class="absolute inset-0 rounded-2xl bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Install</h3>
+                        <div class="text-zinc-400 text-sm">
+                            <code class="bg-zinc-800 px-3 py-1 rounded text-emerald-400 border border-zinc-700">npm i -g krolik-cli</code>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Install</h3>
-                    <p class="text-gray-600">
-                        <code class="bg-gray-100 px-3 py-1 rounded text-sm">npm i -g @anatolykoptev/krolik-cli</code>
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-green-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        2
+
+                    <!-- Step 2 -->
+                    <div class="text-center group">
+                         <div class="bg-zinc-900 border border-zinc-700 w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-8 shadow-lg shadow-black/50 group-hover:border-emerald-500/50 group-hover:shadow-emerald-500/20 transition duration-300 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 group-hover:from-emerald-400 group-hover:to-emerald-600">2</span>
+                            <div class="absolute inset-0 rounded-2xl bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Configure</h3>
+                        <p class="text-zinc-400 text-sm max-w-xs mx-auto">
+                            Add API keys for your preferred models (Anthropic, Google, Groq, etc.)
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Configure</h3>
-                    <p class="text-gray-600">
-                        Add API keys for your preferred models (Anthropic, Google, Groq, etc.)
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-green-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                        3
+
+                    <!-- Step 3 -->
+                    <div class="text-center group">
+                         <div class="bg-zinc-900 border border-zinc-700 w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-8 shadow-lg shadow-black/50 group-hover:border-emerald-500/50 group-hover:shadow-emerald-500/20 transition duration-300 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 group-hover:from-emerald-400 group-hover:to-emerald-600">3</span>
+                             <div class="absolute inset-0 rounded-2xl bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Save Money</h3>
+                        <p class="text-zinc-400 text-sm max-w-xs mx-auto">
+                            Krolik Felix automatically routes tasks to optimal models. Watch costs drop 90%.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Save Money</h3>
-                    <p class="text-gray-600">
-                        Krolik Felix automatically routes tasks to optimal models. Watch costs drop 90%.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Code Example Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-y border-white/5">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Simple to Use</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Get started with Krolik Felix in seconds. Install globally and let it optimize your AI costs automatically.
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Simple to Use</h2>
+                <p class="text-xl text-zinc-400 max-w-3xl mx-auto">
+                    Get started with Krolik Felix in seconds. 
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start">
-                <!-- Installation -->
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Installation</h3>
-                    <div class="bg-gray-900 text-gray-100 p-6 rounded-xl shadow-lg font-mono text-sm overflow-x-auto">
-                        <div class="mb-4">
-                            <span class="text-green-400"># Install globally via npm</span><br>
-                            <span class="text-blue-400">npm</span> i -g @anatolykoptev/krolik-cli
+                <!-- Installation Window -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                         <div class="ml-2 text-xs text-zinc-500 font-mono">setup.sh</div>
+                    </div>
+                    <div class="terminal-body">
+                         <div class="mb-4">
+                            <span class="text-zinc-500"># Install globally via npm</span><br>
+                            <span class="cmd-prompt">➜</span> <span class="cmd-input">npm i -g @anatolykoptev/krolik-cli</span>
                         </div>
-                        <div>
-                            <span class="text-green-400"># Start optimizing AI costs</span><br>
-                            <span class="text-blue-400">krolik</span> felix start --prd PRD.json
+                         <div>
+                            <span class="text-zinc-500"># Authenticate (optional)</span><br>
+                            <span class="cmd-prompt">➜</span> <span class="cmd-input">krolik login</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- PRD Example -->
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">PRD Configuration</h3>
-                    <div class="bg-gray-900 text-gray-100 p-6 rounded-xl shadow-lg font-mono text-sm overflow-x-auto">
-                        <pre class="text-xs leading-relaxed"><span class="text-purple-400">{</span>
-  <span class="text-blue-300">"name"</span>: <span class="text-green-300">"Add authentication"</span>,
-  <span class="text-blue-300">"tasks"</span>: [
-    <span class="text-purple-400">{</span>
-      <span class="text-blue-300">"id"</span>: <span class="text-green-300">"create-user-model"</span>,
-      <span class="text-blue-300">"description"</span>: <span class="text-green-300">"Create User model"</span>,
-      <span class="text-blue-300">"complexity"</span>: <span class="text-green-300">"low"</span>
-      <span class="text-gray-500">// → Routed to Cheap tier</span>
-    <span class="text-purple-400">}</span>,
-    <span class="text-purple-400">{</span>
-      <span class="text-blue-300">"id"</span>: <span class="text-green-300">"jwt-auth"</span>,
-      <span class="text-blue-300">"description"</span>: <span class="text-green-300">"Implement JWT auth"</span>,
-      <span class="text-blue-300">"complexity"</span>: <span class="text-green-300">"high"</span>
-      <span class="text-gray-500">// → Routed to Premium</span>
-    <span class="text-purple-400">}</span>
-  ]
-<span class="text-purple-400">}</span></pre>
+                <!-- Execution Window -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="ml-2 text-xs text-zinc-500 font-mono">run.sh</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="mb-4">
+                            <span class="text-zinc-500"># Run with specific PRD requirements</span><br>
+                            <span class="cmd-prompt">➜</span> <span class="cmd-input">krolik felix run --prd ./specs/api.json</span>
+                        </div>
+                        <div class="text-xs font-mono text-zinc-400 opacity-80 pl-2 border-l-2 border-zinc-700 mt-2">
+                             <span class="text-emerald-400">✔</span> Analysis complete<br>
+                             <span class="text-emerald-400">✔</span> Difficulty: Moderate -> Routing to Haiku<br>
+                             <span class="text-emerald-400">✔</span> Cost estimate: $0.002
+                        </div>
                     </div>
                 </div>
             </div>
@@ -492,108 +516,83 @@
     </section>
 
     <!-- Cost Comparison Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section class="py-32 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-zinc-900/50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Real Cost Savings</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    See the dramatic difference when you stop overpaying for AI. Same quality, 90% less cost.
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Real-World Savings</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+                    Stop burning money on over-provisioned models. 
+                    <span class="text-emerald-400 font-mono">100 tasks</span> comparison.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Before: Without Felix -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-red-200">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Without Felix</h3>
-                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">❌ Expensive</span>
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Legacy Approach -->
+                <div class="bg-zinc-900/50 border border-white/5 rounded-xl p-8 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Standard Way</h3>
+                            <p class="text-zinc-500 text-sm">Everything on GPT-4 / Opus</p>
+                        </div>
+                        <div class="bg-red-500/10 text-red-400 px-3 py-1 rounded text-xs font-mono font-bold tracking-wider uppercase border border-red-500/20">Inefficient</div>
                     </div>
 
-                    <div class="space-y-4 mb-8">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-600">Simple task (formatting)</span>
-                            <span class="font-semibold text-gray-900">$0.50</span>
+                    <div class="space-y-4 mb-8 font-mono text-sm">
+                        <div class="flex justify-between p-3 bg-white/5 rounded">
+                            <span class="text-zinc-400">Simple (60%)</span>
+                            <span class="text-red-300">$0.50</span>
                         </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-600">Medium task (feature)</span>
-                            <span class="font-semibold text-gray-900">$3.00</span>
+                        <div class="flex justify-between p-3 bg-white/5 rounded">
+                            <span class="text-zinc-400">Medium (25%)</span>
+                            <span class="text-red-300">$3.00</span>
                         </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-600">Complex task (architecture)</span>
-                            <span class="font-semibold text-gray-900">$8.00</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-600 text-sm italic">All using premium models</span>
-                            <span class="font-semibold text-red-600">↑ Wasteful</span>
+                        <div class="flex justify-between p-3 bg-white/5 rounded">
+                            <span class="text-zinc-400">Complex (15%)</span>
+                            <span class="text-red-300">$8.00</span>
                         </div>
                     </div>
-
-                    <div class="pt-6 border-t-2 border-red-200">
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-gray-900">Monthly Cost</span>
-                            <span class="text-4xl font-extrabold text-red-600">$1,500</span>
+                    
+                    <div class="mt-auto pt-6 border-t border-white/10">
+                        <div class="flex justify-between items-end">
+                            <span class="text-zinc-500 uppercase text-xs tracking-wider font-semibold">Total Cost</span>
+                            <span class="text-4xl font-bold text-red-400 font-mono">$1,500</span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2 text-right">for 100 tasks/month</p>
                     </div>
                 </div>
 
-                <!-- After: With Felix -->
-                <div class="bg-gradient-to-br from-green-500 to-blue-500 p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-bold text-white">With Felix</h3>
-                        <span class="bg-white text-green-600 px-4 py-2 rounded-full text-sm font-semibold">✅ Optimized</span>
+                <!-- Krolik Approach -->
+                <div class="bg-gradient-to-br from-zinc-900 to-black border border-emerald-500/30 rounded-xl p-8 relative overflow-hidden shadow-2xl animate-border-pulse">
+                    <div class="absolute inset-0 bg-emerald-500/5 pointer-events-none"></div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">With Krolik</h3>
+                            <p class="text-emerald-400/80 text-sm">Intelligent Routing</p>
+                        </div>
+                        <div class="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded text-xs font-mono font-bold tracking-wider uppercase border border-emerald-500/20">Optimized</div>
                     </div>
 
-                    <div class="space-y-4 mb-8">
-                        <div class="flex justify-between items-center py-3 border-b border-white/30">
-                            <span class="text-white/90">Simple task (formatting)</span>
-                            <span class="font-semibold text-white">$0.00</span>
+                    <div class="space-y-4 mb-8 font-mono text-sm relative z-10">
+                        <div class="flex justify-between p-3 bg-emerald-500/10 rounded border border-emerald-500/10">
+                            <span class="text-emerald-100">Simple (60%)</span>
+                            <span class="text-emerald-400">$0.00</span>
                         </div>
-                        <div class="flex justify-between items-center py-3 border-b border-white/30">
-                            <span class="text-white/90">Medium task (feature)</span>
-                            <span class="font-semibold text-white">$0.50</span>
+                        <div class="flex justify-between p-3 bg-emerald-500/10 rounded border border-emerald-500/10">
+                            <span class="text-emerald-100">Medium (25%)</span>
+                            <span class="text-emerald-400">$0.50</span>
                         </div>
-                        <div class="flex justify-between items-center py-3 border-b border-white/30">
-                            <span class="text-white/90">Complex task (architecture)</span>
-                            <span class="font-semibold text-white">$8.00</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-white/30">
-                            <span class="text-white/90 text-sm italic">Auto-routed to optimal tiers</span>
-                            <span class="font-semibold text-white">✨ Smart</span>
+                        <div class="flex justify-between p-3 bg-emerald-500/10 rounded border border-emerald-500/10">
+                            <span class="text-emerald-100">Complex (15%)</span>
+                            <span class="text-emerald-400">$8.00</span>
                         </div>
                     </div>
-
-                    <div class="pt-6 border-t-2 border-white/40">
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-white">Monthly Cost</span>
-                            <span class="text-4xl font-extrabold text-white">$150</span>
+                    
+                    <div class="mt-auto pt-6 border-t border-emerald-500/20 relative z-10">
+                        <div class="flex justify-between items-end">
+                            <span class="text-emerald-500/70 uppercase text-xs tracking-wider font-semibold">Total Cost</span>
+                            <span class="text-4xl font-bold text-emerald-400 font-mono">$150</span>
                         </div>
-                        <p class="text-white/80 text-sm mt-2 text-right">for 100 tasks/month</p>
-                    </div>
-
-                    <!-- Savings Badge -->
-                    <div class="mt-6 bg-white/20 backdrop-blur-sm p-4 rounded-xl text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">$1,350 Saved</div>
-                        <div class="text-white/90 font-semibold">90% Cost Reduction</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Breakdown Explanation -->
-            <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg">
-                <h4 class="text-xl font-bold text-gray-900 mb-4">How Felix Achieves 90% Savings</h4>
-                <div class="grid sm:grid-cols-3 gap-6">
-                    <div>
-                        <div class="text-3xl font-bold text-green-600 mb-2">60%</div>
-                        <p class="text-gray-600 text-sm">of tasks routed to <strong>Free tier</strong> (formatting, refactoring, simple fixes)</p>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-blue-600 mb-2">25%</div>
-                        <p class="text-gray-600 text-sm">of tasks routed to <strong>Cheap tier</strong> (features, debugging, testing)</p>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-purple-600 mb-2">15%</div>
-                        <p class="text-gray-600 text-sm">of tasks routed to <strong>Mid/Premium tiers</strong> (complex architecture, algorithms)</p>
+                        <div class="mt-2 text-right text-xs text-emerald-500/50 font-mono">90% SAVINGS</div>
                     </div>
                 </div>
             </div>
@@ -601,224 +600,135 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="pricing" class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900/30">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Free & Open Source</h2>
-            <p class="text-xl text-gray-600 mb-12">
-                Krolik Felix is completely free to use. Pay only for the AI model APIs you consume.
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Open Source & Free</h2>
+            <p class="text-xl text-zinc-400 mb-12">
+                Apache 2.0 / FSL-1.1. You only pay for the API tokens you use.
             </p>
-            <div class="bg-white p-12 rounded-2xl shadow-xl">
-                <div class="text-6xl font-extrabold gradient-text mb-4">$0</div>
-                <div class="text-2xl text-gray-600 mb-8">Forever</div>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center justify-center space-x-3">
-                        <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-gray-700">Unlimited tasks</span>
+            
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                
+                <div class="relative bg-zinc-900 border border-zinc-800 rounded-xl p-12 hover:border-zinc-700 transition">
+                    <div class="text-6xl font-bold text-white mb-2 font-mono">$0</div>
+                    <div class="text-zinc-500 text-lg mb-8 uppercase tracking-widest font-semibold">Forever</div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 max-w-lg mx-auto mb-10 text-left">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-zinc-300">Unlimited local usage</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-zinc-300">All features included</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-zinc-300">Community support</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-zinc-300">Transparent License</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-center space-x-3">
-                        <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-gray-700">All features included</span>
-                    </div>
-                    <div class="flex items-center justify-center space-x-3">
-                        <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-gray-700">Community support</span>
-                    </div>
-                    <div class="flex items-center justify-center space-x-3">
-                        <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-gray-700">FSL-1.1 License → Apache 2.0</span>
-                    </div>
+                    
+                    <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="inline-block bg-white text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-zinc-200 transition">
+                        Get Started
+                    </a>
                 </div>
-                <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition">
-                    Get Started Free
-                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-32 px-4 sm:px-6 lg:px-8 border-t border-white/5">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Common Questions</h2>
+                <p class="text-xl text-zinc-400">
                     Everything you need to know about Krolik Felix
                 </p>
             </div>
 
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">What is Krolik Felix?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-zinc-900/30 border border-white/5 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-zinc-900 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-white">What is Krolik Felix?</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="faq-answer hidden px-6 pb-5 border-t border-white/5">
+                        <p class="text-zinc-400 leading-relaxed">
                             Krolik Felix is an open-source TypeScript CLI tool that automatically routes AI tasks to optimal model tiers (Free, Cheap, Mid, Premium) based on complexity. It reduces AI API costs by 90% through intelligent multi-tier routing.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">How does multi-tier routing work?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-zinc-900/30 border border-white/5 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-zinc-900 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-white">How does multi-tier routing work?</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed mb-3">
+                    <div class="faq-answer hidden px-6 pb-5 border-t border-white/5">
+                        <p class="text-zinc-400 leading-relaxed mb-3">
                             Felix analyzes each task's complexity and automatically selects the most cost-effective AI model:
                         </p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li><strong>Free tier</strong> (60% of tasks): formatting, refactoring, simple fixes</li>
-                            <li><strong>Cheap tier</strong> (25% of tasks): features, debugging, testing</li>
-                            <li><strong>Mid/Premium tiers</strong> (15% of tasks): architecture, complex algorithms</li>
+                        <ul class="list-disc list-inside text-zinc-400 space-y-2 ml-2">
+                            <li><strong class="text-white">Free tier</strong> (60%): formatting, refactoring, simple fixes</li>
+                            <li><strong class="text-white">Cheap tier</strong> (25%): features, debugging, testing</li>
+                            <li><strong class="text-white">Mid/Premium tiers</strong> (15%): architecture, complex algorithms</li>
                         </ul>
-                        <p class="text-gray-600 leading-relaxed mt-3">
-                            If a cheaper model fails, it automatically cascades to the next tier for reliability.
-                        </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">How much does Krolik Felix cost?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-zinc-900/30 border border-white/5 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-zinc-900 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-white">How much does Krolik Felix cost?</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed">
-                            <strong class="text-green-600">Krolik Felix is completely free</strong> and open source under the FSL-1.1 license (converts to Apache 2.0 on December 26, 2027). You only pay for the AI model APIs you consume, which are automatically optimized to reduce costs by 90%.
+                    <div class="faq-answer hidden px-6 pb-5 border-t border-white/5">
+                        <p class="text-zinc-400 leading-relaxed">
+                            <strong class="text-emerald-400">Krolik Felix is completely free</strong> and open source. You only pay for the AI model APIs you consume, which are automatically optimized to reduce costs by 90%.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">Which AI models are supported?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <div class="bg-zinc-900/30 border border-white/5 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-zinc-900 transition" aria-expanded="false">
+                        <span class="text-lg font-semibold text-white">Which AI models are supported?</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed mb-3">
+                    <div class="faq-answer hidden px-6 pb-5 border-t border-white/5">
+                        <p class="text-zinc-400 leading-relaxed mb-3">
                             Felix supports all major AI providers:
                         </p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li><strong>OpenAI</strong>: GPT-4, GPT-4 Turbo, GPT-3.5 Turbo</li>
-                            <li><strong>Anthropic</strong>: Claude Opus, Sonnet, Haiku</li>
-                            <li><strong>Google</strong>: Gemini Pro, Gemini Flash</li>
-                            <li><strong>Open Source</strong>: Llama, DeepSeek, and more</li>
+                        <ul class="list-disc list-inside text-zinc-400 space-y-2 ml-2">
+                            <li><strong class="text-white">Opus, GPT-4o, Gemini 1.5 Pro</strong> (Premium)</li>
+                            <li><strong class="text-white">Haiku, GPT-3.5, Flash</strong> (Cheap)</li>
+                             <li><strong class="text-white">Llama 3, DeepSeek</strong> (Local/Open Source)</li>
                         </ul>
-                        <p class="text-gray-600 leading-relaxed mt-3">
-                            Felix automatically manages API keys and routing across all providers.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">Do I need to change my code?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed mb-3">
-                            <strong>No code changes required.</strong> Krolik Felix works as a CLI tool or MCP server:
-                        </p>
-                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm">
-                            <span class="text-green-400"># Install globally</span><br>
-                            <span class="text-blue-400">npm</span> i -g @anatolykoptev/krolik-cli<br><br>
-                            <span class="text-green-400"># Create PRD and run</span><br>
-                            <span class="text-blue-400">krolik</span> felix start --prd PRD.json
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">Is it safe for production use?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed">
-                            <strong class="text-green-600">Yes, production-ready.</strong> Felix includes cascade fallback for reliability—if a cheaper model fails, it automatically escalates to the next tier. It uses SQLite-based history learning to improve routing accuracy over time and maintains full TypeScript type safety.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 7 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">How do I track my savings?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed mb-3">
-                            Felix provides comprehensive cost tracking:
-                        </p>
-                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm mb-3">
-                            <span class="text-green-400"># View routing statistics</span><br>
-                            <span class="text-blue-400">krolik</span> felix stats<br><br>
-                            <span class="text-green-400"># Estimate costs before execution</span><br>
-                            <span class="text-blue-400">krolik</span> felix estimate --prd PRD.json
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Get detailed breakdowns including per-tier usage, success rates, and projected costs (optimistic, expected, pessimistic).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 8 -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition" aria-expanded="false">
-                        <span class="text-lg font-semibold text-gray-900">Can I use it with Claude Code?</span>
-                        <svg class="faq-icon w-6 h-6 text-green-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-5">
-                        <p class="text-gray-600 leading-relaxed mb-3">
-                            <strong class="text-green-600">Yes!</strong> Krolik Felix includes native Model Context Protocol (MCP) integration:
-                        </p>
-                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm">
-                            <span class="text-blue-400">claude</span> mcp add krolik -- npx @anatolykoptev/krolik-cli mcp
-                        </div>
-                        <p class="text-gray-600 leading-relaxed mt-3">
-                            This provides context-aware tools directly in Claude Code, including project context, memory management, and cost optimization.
-                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- Still have questions? -->
-            <div class="mt-12 text-center">
-                <p class="text-gray-600 mb-4">Still have questions?</p>
-                <a href="https://github.com/anatolykoptev/krolik-cli/discussions" target="_blank" class="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-semibold">
+            <div class="mt-16 text-center">
+                <p class="text-zinc-500 mb-4">Still have questions?</p>
+                <a href="https://github.com/anatolykoptev/krolik-cli/discussions" target="_blank" class="inline-flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 font-mono text-sm transition border-b border-emerald-500/30 pb-1 hover:border-emerald-400">
                     <span>Ask on GitHub Discussions</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>
@@ -827,18 +737,22 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-600 to-blue-600 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Ready to Cut Your AI Costs?</h2>
-            <p class="text-xl mb-10 opacity-90">
-                Join developers who are saving 90% on AI API costs with intelligent multi-tier routing
+    <section class="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-emerald-500/5"></div>
+        <div class="absolute inset-0 subtle-grid opacity-30 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">Ready to optimize?</h2>
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
+                Join developers saving 90% on AI API costs. Open source, TypeScript-native, and production ready.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="bg-white text-green-600 px-10 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl transition">
-                    View on GitHub
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-black px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40">
+                    Get Started Now
                 </a>
-                <a href="https://www.npmjs.com/package/@anatolykoptev/krolik-cli" target="_blank" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-600 transition">
-                    npm Package
+                <a href="https://www.npmjs.com/package/@anatolykoptev/krolik-cli" target="_blank" class="bg-zinc-800 border border-zinc-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-zinc-700 hover:border-zinc-600 transition flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331zM10.665 10H12v2.667h-1.335V10z"/></svg>
+                    npm install
                 </a>
             </div>
         </div>
@@ -847,41 +761,41 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-black text-zinc-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-2">
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="./images/logo.webp" alt="Krolik Felix" class="h-10 w-10 rounded-lg">
-                        <span class="text-xl font-bold text-white">Krolik Felix</span>
+                        <img src="./images/logo.webp" alt="Krolik Felix" class="h-8 w-8 rounded-md grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+                        <span class="text-lg font-bold text-white font-mono">krolik<span class="text-emerald-500">.felix</span></span>
                     </div>
-                    <p class="text-gray-400 mb-4">
+                    <p class="text-zinc-500 mb-4 text-sm max-w-sm">
                         Multi-Tier AI Orchestration for cost-optimized development. Cut AI costs by 90% with intelligent model routing.
                     </p>
-                    <div class="text-sm text-gray-500">
+                    <div class="text-xs text-zinc-600 font-mono">
                         © 2026 Anatoly Koptev. Licensed under FSL-1.1-Apache-2.0.
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
-                        <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
-                        <li><a href="https://github.com/anatolykoptev/krolik-cli#readme" target="_blank" class="hover:text-white transition">Documentation</a></li>
+                    <h4 class="text-white font-bold mb-4 font-mono text-sm uppercase tracking-wider">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-emerald-400 transition">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-emerald-400 transition">How It Works</a></li>
+                        <li><a href="#pricing" class="hover:text-emerald-400 transition">Pricing</a></li>
+                        <li><a href="https://github.com/anatolykoptev/krolik-cli#readme" target="_blank" class="hover:text-emerald-400 transition">Documentation</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="hover:text-white transition">GitHub</a></li>
-                        <li><a href="https://www.npmjs.com/package/@anatolykoptev/krolik-cli" target="_blank" class="hover:text-white transition">npm</a></li>
-                        <li><a href="https://github.com/anatolykoptev/krolik-cli/issues" target="_blank" class="hover:text-white transition">Issues</a></li>
-                        <li><a href="https://github.com/anatolykoptev/krolik-cli/blob/main/CONTRIBUTING.md" target="_blank" class="hover:text-white transition">Contributing</a></li>
+                    <h4 class="text-white font-bold mb-4 font-mono text-sm uppercase tracking-wider">Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" class="hover:text-emerald-400 transition">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@anatolykoptev/krolik-cli" target="_blank" class="hover:text-emerald-400 transition">npm</a></li>
+                        <li><a href="https://github.com/anatolykoptev/krolik-cli/issues" target="_blank" class="hover:text-emerald-400 transition">Issues</a></li>
+                        <li><a href="https://github.com/anatolykoptev/krolik-cli/blob/main/CONTRIBUTING.md" target="_blank" class="hover:text-emerald-400 transition">Contributing</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <div class="border-t border-white/5 pt-8 text-center text-zinc-600 text-xs font-mono">
                 <p>Built with ❤️ for the TypeScript community</p>
             </div>
         </div>
