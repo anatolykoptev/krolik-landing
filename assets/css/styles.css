@@ -218,21 +218,27 @@ code, .font-mono {
 .mobile-menu.active { transform: translateX(0); }
 
 /* Skip Link */
+/* Skip Link */
 .skip-link {
     background: var(--accent-primary);
     color: black;
     font-weight: bold;
-    padding: 8px 16px;
-    position: absolute;
-    top: -40px;
-    left: 0;
-    z-index: 100;
-    transition: top 0.2s;
-    border-radius: 0 0 4px 0;
+    padding: 12px 20px;
+    position: fixed; /* Fixed so it stays on top even if scrolled */
+    top: 0;
+    left: 20px;
+    z-index: 1000; /* Higher than nav z-50 */
+    transform: translateY(-110%);
+    transition: transform 0.2s ease-out;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    text-decoration: none;
 }
 
 .skip-link:focus {
-    top: 0;
+    transform: translateY(0);
+    outline: 2px solid white;
+    outline-offset: 2px;
 }
 
 .mask-gradient-to-b {

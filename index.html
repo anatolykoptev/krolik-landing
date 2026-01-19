@@ -321,9 +321,10 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-auto md:h-[600px]">
-                <!-- Large Item 1: Intelligent Routing -->
-                <div class="md:col-span-2 row-span-2 spotlight-group spotlight-card rounded-xl p-8 flex flex-col justify-between group">
+            <!-- Changed to auto-rows to allow content to dictate height, removed fixed height -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
+                <!-- Large Item 1: Intelligent Routing (2x2) -->
+                <div class="md:col-span-2 md:row-span-2 spotlight-group spotlight-card rounded-xl p-8 flex flex-col justify-between group min-h-[400px]">
                     <div>
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:border-emerald-500/50 transition">
                              <img src="./images/Modern_minimalist_icon_multi_1_2026-01-18T09-17-11.png" alt="Multi-Tier Routing" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
@@ -355,17 +356,16 @@
                     </div>
                 </div>
 
-                <!-- Item 2: Cost Savings -->
-                <div class="md:col-span-1 row-span-1 spotlight-group spotlight-card rounded-xl p-8 relative overflow-hidden group">
+                <!-- Item 2: Cost Savings (1x1) -->
+                <div class="md:col-span-1 md:row-span-1 spotlight-group spotlight-card rounded-xl p-8 relative overflow-hidden group min-h-[280px] flex flex-col justify-between">
                      <div class="absolute top-0 right-0 p-32 bg-gradient-to-br from-emerald-500/5 to-transparent pointer-events-none rounded-bl-full"></div>
-                     <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-blue-500/50 transition">
-                         <img src="./images/Modern_minimalist_icon_dollar_1_2026-01-18T09-17-21.png" alt="Cost Savings" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
+                     <div>
+                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-blue-500/50 transition">
+                             <img src="./images/Modern_minimalist_icon_dollar_1_2026-01-18T09-17-21.png" alt="Cost Savings" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
+                         </div>
+                         <h3 class="text-xl font-bold text-white mb-2">90% Cost Reduction</h3>
                      </div>
-                     <h3 class="text-xl font-bold text-white mb-2">90% Cost Reduction</h3>
-                     <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-                         Stop paying premium prices for low-complexity tokens.
-                     </p>
-                      <div class="mt-auto space-y-2">
+                      <div class="mt-4 space-y-2">
                           <div class="flex items-center gap-2 text-xs font-mono text-red-400/60 line-through">
                               <div class="w-16">Before</div>
                               <div class="h-2 w-full bg-red-900/30 rounded overflow-hidden">
@@ -383,26 +383,28 @@
                       </div>
                 </div>
 
-                <!-- Item 3: Cascade -->
-                <div class="md:col-span-1 row-span-1 spotlight-group spotlight-card rounded-xl p-8 group">
+                <!-- Item 3: Cascade (1x1) -->
+                <div class="md:col-span-1 md:row-span-1 spotlight-group spotlight-card rounded-xl p-8 group min-h-[280px] flex flex-col justify-center">
                      <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 border border-purple-500/20 group-hover:border-purple-500/50 transition">
                          <img src="./images/icon-tiers.webp" alt="Cascade Fallback" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition">
                      </div>
                     <h3 class="text-xl font-bold text-white mb-2">Cascade Fallback</h3>
                     <p class="text-zinc-400 text-sm leading-relaxed">
-                        Fail-safe reliability. If a cheaper model fails or halts, Felix instantly retries with the next tier up.
+                        Fail-safe reliability. Model failure triggers instant retry on next tier.
                     </p>
                 </div>
 
-                <!-- Item 4: History -->
-                <div class="md:col-span-1 row-span-1 spotlight-group spotlight-card rounded-xl p-8 group">
-                     <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 border border-orange-500/20 group-hover:border-orange-500/50 transition">
-                         <img src="./images/Professional_tech_illustration_1_2026-01-18T09-16-45.png" alt="Heuristic Learning" class="w-full h-full object-contain p-1 opacity-80 group-hover:opacity-100 transition rounded-md">
+                <!-- Item 4: History (Full Width) -->
+                <div class="md:col-span-3 spotlight-group spotlight-card rounded-xl p-8 group flex flex-col md:flex-row items-center gap-8 min-h-[200px]">
+                     <div class="flex-shrink-0 w-16 h-16 bg-orange-500/10 rounded-lg flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/50 transition">
+                         <img src="./images/Professional_tech_illustration_1_2026-01-18T09-16-45.png" alt="Heuristic Learning" class="w-full h-full object-contain p-2 opacity-80 group-hover:opacity-100 transition rounded-md">
                      </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Heuristic Learning</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">
-                        SQLite-backed memory tracks model performance over time to optimize future routing decisions.
-                    </p>
+                     <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-white mb-2">Heuristic Learning Engine</h3>
+                        <p class="text-zinc-400 leading-relaxed max-w-2xl">
+                            Krolik Felix doesn't just route randomly. It uses a local SQLite database to track success rates and latency for every routing decision, optimizing your workflow over time.
+                        </p>
+                     </div>
                 </div>
             </div>
         </div>
