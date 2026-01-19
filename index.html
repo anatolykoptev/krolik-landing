@@ -178,7 +178,7 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">Features</a>
-                    <a href="#how-it-works" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">How It Works</a>
+                    <a href="#quick-start" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">Quick Start</a>
                     <a href="#pricing" class="text-sm text-zinc-400 hover:text-emerald-400 transition font-mono">Pricing</a>
                     <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="bg-white/5 border border-white/10 hover:border-emerald-500/50 text-white px-4 py-2 rounded-md font-mono text-xs transition flex items-center gap-2">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -212,7 +212,7 @@
             </div>
             <nav class="flex flex-col space-y-4 font-mono">
                 <a href="#features" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">Features</a>
-                <a href="#how-it-works" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">How It Works</a>
+                <a href="#quick-start" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">Quick Start</a>
                 <a href="#pricing" class="text-zinc-400 hover:text-emerald-400 transition py-2 border-b border-white/5">Pricing</a>
                 <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="bg-emerald-600/20 border border-emerald-500/50 text-emerald-400 px-6 py-3 rounded-md font-semibold text-center mt-4 hover:bg-emerald-600/30 transition">
                     Install Now
@@ -254,23 +254,15 @@
                     <span class="text-emerald-400 font-semibold">Felix automatically routes 60% of your work to free models</span>.
                 </p>
 
-                <div class="flex flex-col gap-4 justify-center items-center">
-                    <!-- Main command (prominent) -->
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-2 pr-5 flex items-center gap-3 font-mono text-base text-zinc-400">
-                        <span class="bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded select-none font-semibold">$</span>
-                        <span class="select-all text-emerald-400 font-semibold text-lg">krolik felix start</span>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-1 pr-4 flex items-center gap-3 font-mono text-sm text-zinc-400">
+                        <span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded select-none">$</span>
+                        <span class="select-all">npm i -g @anatolykoptev/krolik-cli</span>
                         <button class="text-zinc-500 hover:text-white transition" aria-label="Copy command">
-                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                         </button>
                     </div>
-
-                    <!-- Installation note (secondary) -->
-                    <p class="text-xs text-zinc-500 text-center">
-                        Install first: <code class="bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">npm i -g @anatolykoptev/krolik-cli</code>
-                    </p>
-
-                    <!-- GitHub link -->
-                    <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-sm text-zinc-300 hover:text-white transition group font-medium">
+                    <a href="https://github.com/anatolykoptev/krolik-cli" target="_blank" rel="noopener noreferrer" class="btn-secondary group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                         View on GitHub
                     </a>
@@ -443,13 +435,13 @@
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
+    <!-- Quick Start -->
+    <section id="quick-start" class="py-32 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Workflow Integrations</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Quick Start</h2>
                 <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-                    Three simple steps to cut your AI costs by 90%
+                    Three simple steps to start saving on AI costs
                 </p>
             </div>
             
@@ -466,7 +458,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3 font-mono">Install</h3>
                         <div class="text-zinc-400 text-sm">
-                            <code class="bg-zinc-800 px-3 py-1 rounded text-emerald-400 border border-zinc-700">npm i -g krolik-cli</code>
+                            <code class="bg-zinc-800 px-3 py-1 rounded text-emerald-400 border border-zinc-700">npm i -g @anatolykoptev/krolik-cli</code>
                         </div>
                     </div>
 
@@ -494,6 +486,82 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="py-32 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Integrations</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+                    Works seamlessly with your existing tools and workflows
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Claude Code MCP -->
+                <div class="bg-zinc-900/50 border border-white/5 rounded-xl p-6 hover:border-emerald-500/30 transition group">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4 border border-emerald-500/20 group-hover:border-emerald-500/50 transition">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Claude Code</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">
+                        Native MCP integration for seamless AI-assisted development
+                    </p>
+                    <code class="text-xs text-emerald-400 font-mono mt-3 block">claude mcp add krolik</code>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="bg-zinc-900/50 border border-white/5 rounded-xl p-6 hover:border-blue-500/30 transition group">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 border border-blue-500/20 group-hover:border-blue-500/50 transition">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">CI/CD Pipelines</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">
+                        GitHub Actions, GitLab CI, Jenkins integration out of the box
+                    </p>
+                    <code class="text-xs text-blue-400 font-mono mt-3 block">krolik felix start</code>
+                </div>
+
+                <!-- IDEs -->
+                <div class="bg-zinc-900/50 border border-white/5 rounded-xl p-6 hover:border-purple-500/30 transition group">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 border border-purple-500/20 group-hover:border-purple-500/50 transition">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">IDE Support</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">
+                        VS Code, JetBrains IDEs via MCP protocol integration
+                    </p>
+                    <span class="text-xs text-purple-400 font-mono mt-3 block">MCP Compatible</span>
+                </div>
+
+                <!-- Terminal -->
+                <div class="bg-zinc-900/50 border border-white/5 rounded-xl p-6 hover:border-orange-500/30 transition group">
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4 border border-orange-500/20 group-hover:border-orange-500/50 transition">
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Universal CLI</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">
+                        Works in any terminal: Bash, Zsh, Fish, PowerShell
+                    </p>
+                    <span class="text-xs text-orange-400 font-mono mt-3 block">Cross-platform</span>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-sm text-zinc-500">
+                    More integrations coming soon. <a href="https://github.com/anatolykoptev/krolik-cli" class="text-emerald-400 hover:text-emerald-300 transition">Request a feature →</a>
+                </p>
             </div>
         </div>
     </section>
@@ -1040,7 +1108,7 @@
                     <h4 class="text-white font-bold mb-4 font-mono text-sm uppercase tracking-wider">Product</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#features" class="hover:text-emerald-400 transition">Features</a></li>
-                        <li><a href="#how-it-works" class="hover:text-emerald-400 transition">How It Works</a></li>
+                        <li><a href="#quick-start" class="hover:text-emerald-400 transition">Quick Start</a></li>
                         <li><a href="#pricing" class="hover:text-emerald-400 transition">Pricing</a></li>
                         <li><a href="https://github.com/anatolykoptev/krolik-cli#readme" target="_blank" class="hover:text-emerald-400 transition">Documentation</a></li>
                     </ul>
