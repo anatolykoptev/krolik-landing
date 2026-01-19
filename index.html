@@ -116,7 +116,7 @@
           "name": "Which AI models are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Felix supports major AI providers including OpenAI (GPT-4, GPT-3.5), Anthropic (Claude Opus, Sonnet, Haiku), Google (Gemini Pro, Flash), and open-source models (Llama, DeepSeek). It automatically manages API keys and routing across all providers."
+            "text": "Felix supports major AI providers including Anthropic (Claude Opus, Sonnet, Haiku), OpenAI (O1, GPT-4o), Google (Gemini Pro, Flash), and open-source models (Llama, DeepSeek). It automatically manages API keys and routing across all providers."
           }
         },
         {
@@ -252,7 +252,7 @@
                 
                 <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
                     Your AI bill is <span class="text-red-400 font-semibold">10x higher than it should be</span>.
-                    Most tasks like formatting, refactoring, and simple fixes don't need GPT-4 – but you're paying premium prices.
+                    Most tasks like formatting, refactoring, and simple fixes don't need Claude Opus – but you're paying premium prices.
                     <span class="text-emerald-400 font-semibold">Felix automatically routes 60% of your work to free models</span>.
                 </p>
 
@@ -304,7 +304,7 @@
                         <span class="stat-counter" data-target="90" data-suffix="%">0</span>
                     </div>
                     <div class="text-zinc-500 text-sm uppercase tracking-wider font-semibold">Cost Reduction</div>
-                    <div class="text-xs text-zinc-600 mt-1">vs. GPT-4 only approach</div>
+                    <div class="text-xs text-zinc-600 mt-1">vs. premium-only approach</div>
                 </div>
                 <div class="p-4">
                     <div class="text-3xl sm:text-4xl font-bold text-white mb-2 font-mono">
@@ -695,7 +695,7 @@
                     <div class="flex justify-between items-start mb-8">
                         <div>
                             <h3 class="text-2xl font-bold text-white mb-1">Standard Way</h3>
-                            <p class="text-zinc-500 text-sm">Everything on GPT-4 / Opus</p>
+                            <p class="text-zinc-500 text-sm">Everything on Claude Opus</p>
                         </div>
                         <div class="bg-red-500/10 text-red-400 px-3 py-1 rounded text-xs font-mono font-bold tracking-wider uppercase border border-red-500/20">Inefficient</div>
                     </div>
@@ -1047,9 +1047,10 @@
                             Felix supports all major AI providers:
                         </p>
                         <ul class="list-disc list-inside text-zinc-400 space-y-2 ml-2">
-                            <li><strong class="text-white">Opus, GPT-4o, Gemini 1.5 Pro</strong> (Premium)</li>
-                            <li><strong class="text-white">Haiku, GPT-3.5, Flash</strong> (Cheap)</li>
-                             <li><strong class="text-white">Llama 3, DeepSeek</strong> (Local/Open Source)</li>
+                            <li><strong class="text-white">Opus, O1</strong> (Premium tier - 5% of tasks)</li>
+                            <li><strong class="text-white">Sonnet, Gemini Pro</strong> (Mid tier - 10% of tasks)</li>
+                            <li><strong class="text-white">Haiku, Flash</strong> (Cheap tier - 25% of tasks)</li>
+                            <li><strong class="text-white">Llama, DeepSeek</strong> (Free tier - 60% of tasks)</li>
                         </ul>
                     </div>
                 </div>
