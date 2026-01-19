@@ -223,3 +223,8 @@ code, .font-mono {
     color: black;
     font-weight: bold;
 }
+
+.mask-gradient-to-b {
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
