@@ -79,7 +79,7 @@ function updateScrollProgress() {
     const progressBar = document.getElementById('scroll-progress');
     if (progressBar) progressBar.style.width = scrolled + '%';
 }
-window.addEventListener('scroll', updateScrollProgress);
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
 // Animated Counter
 function animateCounter(element) {
@@ -148,16 +148,29 @@ document.querySelectorAll('.faq-question').forEach(button => {
     });
 });
 
-// Spotlight Hover Effect
-document.addEventListener('mousemove', (e) => {
+// Spotlight Hover Effect with RAF throttling
+let rafId = null;
+let lastX = 0;
+let lastY = 0;
+
+function updateSpotlight() {
     document.querySelectorAll('.spotlight-card').forEach(card => {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const x = lastX - rect.left;
+        const y = lastY - rect.top;
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
     });
-});
+    rafId = null;
+}
+
+document.addEventListener('mousemove', (e) => {
+    lastX = e.clientX;
+    lastY = e.clientY;
+    if (!rafId) {
+        rafId = requestAnimationFrame(updateSpotlight);
+    }
+}, { passive: true });
 
 // Terminal Typing Effect
 function initTerminalEffect() {
